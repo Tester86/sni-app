@@ -1,0 +1,12 @@
+{
+  "name": "sni-app",
+  "displayName": "sni-app",
+  "expo": {
+    "name": "sni-app",
+    "slug": "sni-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
