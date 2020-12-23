@@ -1,17 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import {
-	View,
-	StyleSheet,
-	Dimensions,
-	StatusBar,
-	SafeAreaView,
-	Text,
-} from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import DotStatusBar from "../frontend-utils/DotStatusBar";
 import ScrollableScreen from "../frontend-utils/ScrollableScreen";
-import StaffMembers from "./StaffMembers";
+import HorizontalScrollView from "../frontend-utils/HorizontalScrollView";
 
 /* ORDER OF ABOUT US SCREENS:
 
@@ -22,26 +11,10 @@ import StaffMembers from "./StaffMembers";
 */
 
 export default function AboutUsScreen({ navigation }) {
-	const [selected, setSelected] = useState(0);
-
-	const _handleScroll = (event) => {
-		const PAGE_WIDTH = Dimensions.get("window").width;
-		const index = Math.round(
-			event.nativeEvent.contentOffset.x / PAGE_WIDTH
-		);
-		setSelected(index);
-	};
 
 	return (
 		<>
-			<SafeAreaView style={{ flex: 1 }}>
-				<ScrollView
-					style={{ flex: 1 }}
-					horizontal={true}
-					scrollEventThrottle={16}
-					pagingEnabled={true}
-					onMomentumScrollEnd={_handleScroll}
-				>
+				<HorizontalScrollView Ndots={2}>
 					<ScrollableScreen
 						quote="Coming together is a beginning. Keeping together is progress. Working together is success"
 						author="Henry Ford"
@@ -58,9 +31,7 @@ export default function AboutUsScreen({ navigation }) {
 							navigation.navigate("Founding Principles")
 						}
 					/>
-				</ScrollView>
-				<DotStatusBar selected={selected} Ndots={2}/>
-			</SafeAreaView>
+				</HorizontalScrollView>
 		</>
 	);
 }

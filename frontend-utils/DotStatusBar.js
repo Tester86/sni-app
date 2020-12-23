@@ -1,18 +1,26 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 
-export default function DotStatusBar({ selected, Ndots }) {
-	const dotRange = [...Array(Ndots).keys()]
+export default function DotStatusBar({ selected, Ndots, alternativeColors }) {
+	const dotRange = [...Array(Ndots).keys()];
 	return (
-		<View style={[styles.container, Ndots > 2 ? {justifyContent: "space-between" } : {justifyContent: "space-around"}, {width: Ndots * 25}]}>
+		<View
+			style={[
+				styles.container,
+				Ndots > 2
+					? { justifyContent: "space-between" }
+					: { justifyContent: "space-around" },
+				{ width: Ndots * 25 },
+			]}
+		>
 			{dotRange.map((index) => {
 				return (
 					<View
 						style={[
 							styles.dot,
 							selected === index
-								? { backgroundColor: "black" }
-								: { backgroundColor: "white" },
+								? alternativeColors ? { backgroundColor: alternativeColors[0] } : {backgroundColor: "white"}
+								: alternativeColors ? { backgroundColor: alternativeColors[1] } : {backgroundColor: "gray"}
 						]}
 					></View>
 				);

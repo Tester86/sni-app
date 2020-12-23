@@ -9,8 +9,9 @@
       "**/*"
     ],
     "splash": {
-      "image": "./assets/splash.png",
-      "height": "3000px"
-    }
+      "image": "./assets/logo.jpg",
+      "backgroundColor": "#002557"
+    },
+    "orientation": "portrait"
   }
 }
