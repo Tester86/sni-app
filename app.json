@@ -9,9 +9,16 @@
       "**/*"
     ],
     "splash": {
-      "image": "./assets/logo.jpg",
-      "backgroundColor": "#002557"
+      "image": "./assets/logo.png",
+      "backgroundColor": "#002156"
     },
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "android": {
+      "userInterfaceStyle": "light"
+    },
+    "ios": {
+      "userInterfaceStyle": "light"
+    }
   }
 }
+

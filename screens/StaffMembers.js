@@ -7,6 +7,7 @@ import {
 	Dimensions,
 } from "react-native";
 import DotStatusBar from "../frontend-utils/DotStatusBar";
+import StaffMember from "../frontend-utils/StaffMember";
 
 /* <Image source={{uri: "direccion de la imagen"} /> para las fotos de los staff members
 
@@ -34,7 +35,11 @@ export default function StaffMembers() {
 				scrollEventThrottle={16}
 				pagingEnabled={true}
 				onMomentumScrollEnd={_handleScroll}
-			></ScrollView>
+			>
+				<StaffMember imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Vedant.jpeg?alt=media&token=6aadd225-6f35-4967-81be-8d5d4512e1da" role="CEO" biography="Born in the green prados of Australia, he enjooyed of such a freedom none of us have even dreamtn of before" quote="Never give up on your dreams"/>
+				<StaffMember />
+				<StaffMember />
+			</ScrollView>
 			<DotStatusBar selected={selected} Ndots={3} />
 		</SafeAreaView>
 	);
