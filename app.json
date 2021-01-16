@@ -5,6 +5,7 @@
     "name": "sni-app",
     "slug": "sni-app",
     "version": "1.0.0",
+    "icon": "./assets/icon.png",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -12,13 +13,8 @@
       "image": "./assets/logo.png",
       "backgroundColor": "#002156"
     },
-    "orientation": "portrait",
-    "android": {
-      "userInterfaceStyle": "light"
-    },
-    "ios": {
-      "userInterfaceStyle": "light"
-    }
+    "orientation": "portrait"
+  
   }
 }
 

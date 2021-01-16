@@ -36,9 +36,33 @@ export default function StaffMembers() {
 				pagingEnabled={true}
 				onMomentumScrollEnd={_handleScroll}
 			>
-				<StaffMember imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Vedant.jpeg?alt=media&token=6aadd225-6f35-4967-81be-8d5d4512e1da" role="CEO" biography="Born in the green prados of Australia, he enjooyed of such a freedom none of us have even dreamtn of before" quote="Never give up on your dreams"/>
-				<StaffMember />
-				<StaffMember />
+				<StaffMember
+					name="Vedant"
+					imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Vedant.jpeg?alt=media&token=6aadd225-6f35-4967-81be-8d5d4512e1da"
+					role="Vice Director of Workshops"
+					biography="Vedant is an expert presenter, an experienced sportsperson, a youth action enthusiast, and a student Leader from India"
+					quote="Be yourself; everyone else is already taken"
+					author="Oscar Wilde"
+				/>
+				<StaffMember
+					name="Moksha Shivaji"
+					imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/moksha.jpg?alt=media&token=efd70ac0-ba2d-4ad4-8628-6057162f2cb0"
+					role="Vice Director of Conferences"
+					biography="A committed Indian student who aspires to be a lawyer"
+					quote="Success is when your signature becomes an autograph"
+					author="APJ Abdul Kalam"
+				/>
+				<StaffMember
+					name="Mostafa"
+					imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Mostafa.jpg?alt=media&token=439d811d-7174-404f-9870-6e6fe859df3a"
+					biography="Mostafa is a certified Model UN Director, coach, English debate panellist, and judge, as well as a certified digital marketer and a value-driven leader"
+					quote="If you want to achieve something in your life, then take the initiative today, because tomorrow never comes!"
+				/>
+				<StaffMember
+					name="Jayasurya Viswanathan"
+					imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Jayasurya%20Viswanathan.JPG?alt=media&token=e93d08c4-b844-4ab7-8d3d-14b49c0c8d4a"
+					biography=""
+				/>
 			</ScrollView>
 			<DotStatusBar selected={selected} Ndots={3} />
 		</SafeAreaView>

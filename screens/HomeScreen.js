@@ -1,6 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, StatusBar } from "react-native";
 import WidgetRow from "../frontend-utils/WidgetRow";
 
 /* ORDER OF WIDGETS:
@@ -20,6 +20,7 @@ export default function HomeScreen({ navigation }) {
 			colors={["#C582EB", "#002557", "#5CE1E6"]}
 			style={styles.background}
 		>
+			<StatusBar barStyle="dark-content"/>
 			<View style={styles.widget__container}>
 				<WidgetRow
 					imageSrc1={require("../assets/sni_logo.jpg")}
