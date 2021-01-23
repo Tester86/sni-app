@@ -57,14 +57,23 @@ export default function StaffMembers() {
 					imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Mostafa.jpg?alt=media&token=439d811d-7174-404f-9870-6e6fe859df3a"
 					biography="Mostafa is a certified Model UN Director, coach, English debate panellist, and judge, as well as a certified digital marketer and a value-driven leader"
 					quote="If you want to achieve something in your life, then take the initiative today, because tomorrow never comes!"
+					author=""
 				/>
 				<StaffMember
 					name="Jayasurya Viswanathan"
 					imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Jayasurya%20Viswanathan.JPG?alt=media&token=e93d08c4-b844-4ab7-8d3d-14b49c0c8d4a"
 					biography=""
+					quote=""
+				/>
+				<StaffMember
+					name="Alexander Kim"
+					imageLink="https://firebasestorage.googleapis.com/v0/b/sni-app-971f2.appspot.com/o/Alexander.jpg?alt=media&token=9d594c25-da54-4407-b799-d74600c1d30e"
+					biography=""
+					quote=""
+					author=""
 				/>
 			</ScrollView>
-			<DotStatusBar selected={selected} Ndots={3} />
+			<DotStatusBar selected={selected} Ndots={5} />
 		</SafeAreaView>
 	);
 }

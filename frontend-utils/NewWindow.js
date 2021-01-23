@@ -7,25 +7,18 @@ import {
 	Text,
 } from "react-native";
 
-export default function NewWindow({ imageSource }) {
-
-	
-
+export default function NewWindow({ imageSource, title }) {
 	return (
 		<TouchableHighlight style={styles.container}>
 			<View>
 				<Image
 					source={{
-						uri:
-							"https://assets.entrepreneur.com/content/3x2/2000/1609760067-CSR.jpg?quality=95&crop=2:1&width=400",
+						uri: imageSource,
 					}}
 					style={styles.image}
 				/>
 				<View style={styles.titleContainer}>
-					<Text style={styles.title}>
-						7 Reasons Why a CSR Strategy Is Imperative For Your
-						Startup
-					</Text>
+					<Text style={styles.title}>{title}</Text>
 				</View>
 				<View style={styles.websiteTitleContainer}>
 					<Image
