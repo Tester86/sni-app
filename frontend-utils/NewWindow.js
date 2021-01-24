@@ -12,9 +12,7 @@ export default function NewWindow({ imageSource, title }) {
 		<TouchableHighlight style={styles.container}>
 			<View>
 				<Image
-					source={{
-						uri: imageSource,
-					}}
+					source={imageSource ? {uri: imageSource} : require("../assets/default_news_image.jpg")}
 					style={styles.image}
 				/>
 				<View style={styles.titleContainer}>

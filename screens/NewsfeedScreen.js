@@ -45,9 +45,9 @@ export default class NewsfeedScreen extends React.Component {
 				contentContainerStyle={{ alignItems: "center" }}
 				style={styles.container}
 			>
-				{console.log(articles[0].title)}
+				{/*console.log(articles[0].title)*/}
 				{Object.entries(articles).map(([key, value]) => {
-					return <Text>Hello</Text>
+					return <NewWindow title={value.title} imageSource={value.urlToImage}/>
 				})}
 			</ScrollView>
 		);
