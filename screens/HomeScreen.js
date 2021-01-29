@@ -35,7 +35,7 @@ export default function HomeScreen({ navigation }) {
 				<WidgetRow
 					imageSrc1={require("../assets/news_icon.png")}
 					imageSrc2={require("../assets/collaborations_icon.png")}
-					label1={"Newsfeed"}
+					label1={"News Feed"}
 					label2={"Collaborations"}
 					imageStyle1={styles.iconNewsfeed}
 					imageStyle2={styles.iconCollaborations}

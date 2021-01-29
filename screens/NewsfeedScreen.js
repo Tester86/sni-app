@@ -1,6 +1,7 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import AnimatedLoader from "react-native-animated-loader";
 import NewWindow from "../frontend-utils/NewWindow";
 
 /*
@@ -14,12 +15,6 @@ export default class NewsfeedScreen extends React.Component {
 	constructor() {
 		super();
 		this.state = { data: [] };
-		this.sources = [
-			"https://www.entrepreneur.com/topic/leadership",
-			"https://www.forbes.com/leadership/?sh=3d4defd1d66d",
-			"https://www.cnbc.com/leadership/",
-			"https://www.bbc.com/worklife/tags/leadership",
-		];
 	}
 
 	componentDidMount() {
@@ -29,16 +24,19 @@ export default class NewsfeedScreen extends React.Component {
 			.then((res) => res.json())
 			.then((json) => this.setState({ data: json }))
 			.catch((err) => console.log(err));
-
-		/*.then((res) => res.json())
-			.then((json) => this.setState({ data: json }))
-			.catch((err) => console.error(err))
-			.finally(() => console.log("1" + typeof(this.state.data.articles)));*/
 	}
 	render() {
 		const articles = this.state.data.articles;
-		while (articles === undefined) {
-			return <></>;
+		while (articles == undefined) {
+			return (
+				<AnimatedLoader
+					visible={true}
+					speed={1}
+					overlayColor="rgba(255,255,255,0.75)"
+					animationStyle={styles.lottie}
+				>
+				</AnimatedLoader>
+			);
 		}
 		return (
 			<ScrollView
@@ -47,7 +45,12 @@ export default class NewsfeedScreen extends React.Component {
 			>
 				{/*console.log(articles[0].title)*/}
 				{Object.entries(articles).map(([key, value]) => {
-					return <NewWindow title={value.title} imageSource={value.urlToImage}/>
+					return (
+						<NewWindow
+							title={value.title}
+							imageSource={value.urlToImage}
+						/>
+					);
 				})}
 			</ScrollView>
 		);
@@ -61,5 +64,9 @@ const styles = StyleSheet.create({
 		marginLeft: 20,
 		marginRight: 20,
 		marginBottom: 20,
+	},
+	lottie: {
+		width: 100,
+		height: 100,
 	},
 });
