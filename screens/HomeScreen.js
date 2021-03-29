@@ -1,6 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { View, StyleSheet, Text, StatusBar } from "react-native";
+import { View, StyleSheet, StatusBar } from "react-native";
 import WidgetRow from "../frontend-utils/WidgetRow";
 
 /* ORDER OF WIDGETS:

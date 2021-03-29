@@ -1,22 +1,29 @@
 import React from "react";
-import {
-	View,
-	StyleSheet,
-	TouchableHighlight,
-	Image,
-	Text,
-} from "react-native";
+import { DeviceEventEmitter } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function NewWindow({ imageSource, title }) {
+export default function NewWindow({ value, buttonIndex }) {
+	const navigation = useNavigation();
 	return (
-		<TouchableHighlight style={styles.container}>
+		<TouchableOpacity
+			activeOpacity={0.5}
+			style={styles.container}
+			onPress={() => {
+				navigation.navigate("WebView");
+			}}
+		>
 			<View>
 				<Image
-					source={imageSource ? {uri: imageSource} : require("../assets/default_news_image.jpg")}
+					source={
+						value.urlToImage
+							? { uri: value.urlToImage }
+							: require("../assets/default_news_image.jpg")
+					}
 					style={styles.image}
 				/>
 				<View style={styles.titleContainer}>
-					<Text style={styles.title}>{title}</Text>
+					<Text style={styles.title}>{value.title}</Text>
 				</View>
 				<View style={styles.websiteTitleContainer}>
 					<Image
@@ -28,7 +35,7 @@ export default function NewWindow({ imageSource, title }) {
 					/>
 				</View>
 			</View>
-		</TouchableHighlight>
+		</TouchableOpacity>
 	);
 }
 

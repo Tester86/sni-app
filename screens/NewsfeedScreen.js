@@ -1,18 +1,21 @@
-import React from "react";
-import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
+import React, { useEffect } from "react";
+import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import AnimatedLoader from "react-native-animated-loader";
 import NewWindow from "../frontend-utils/NewWindow";
+import { WebView } from "react-native-webview";
+import { DeviceEventEmitter } from "react-native";
+import { View } from "react-native";
 
 /*
-	1. Get full html code of the pages
-	2. Use Jssoup to get a list of the images and related news (create a dict)
-	3. Use uri prop to get the image
-	4. Somehow get the text of the news
+	const event = DeviceEventEmitter.addListener(
+			"buttonPressed",
+			this.redirectToLink
+		);
  */
 
 export default class NewsfeedScreen extends React.Component {
-	constructor() {
+	constructor({ navigation }) {
 		super();
 		this.state = { data: [] };
 	}
@@ -25,8 +28,11 @@ export default class NewsfeedScreen extends React.Component {
 			.then((json) => this.setState({ data: json }))
 			.catch((err) => console.log(err));
 	}
+
 	render() {
 		const articles = this.state.data.articles;
+		let buttonIndex = -1;
+
 		while (articles == undefined) {
 			return (
 				<AnimatedLoader
@@ -34,8 +40,7 @@ export default class NewsfeedScreen extends React.Component {
 					speed={1}
 					overlayColor="rgba(255,255,255,0.75)"
 					animationStyle={styles.lottie}
-				>
-				</AnimatedLoader>
+				></AnimatedLoader>
 			);
 		}
 		return (
@@ -45,11 +50,9 @@ export default class NewsfeedScreen extends React.Component {
 			>
 				{/*console.log(articles[0].title)*/}
 				{Object.entries(articles).map(([key, value]) => {
+					buttonIndex += 1;
 					return (
-						<NewWindow
-							title={value.title}
-							imageSource={value.urlToImage}
-						/>
+						<NewWindow value={value} buttonIndex={buttonIndex} />
 					);
 				})}
 			</ScrollView>

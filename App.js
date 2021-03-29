@@ -11,7 +11,7 @@ import JoinOurTeamScreen from "./screens/JoinOurTeamScreen";
 import SuggestionBoxScreen from "./screens/SuggestionBoxScreen";
 import StaffMembers from "./screens/StaffMembers";
 import FoundingPrinciples from "./screens/FoundingPrinciples";
-
+import WebViewScreen from "./screens/WebViewScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
@@ -37,7 +37,11 @@ export default function App() {
 					component={SuggestionBoxScreen}
 				/>
 				<Stack.Screen name="Staff Members" component={StaffMembers} />
-				<Stack.Screen name="Founding Principles" component={FoundingPrinciples} />
+				<Stack.Screen
+					name="Founding Principles"
+					component={FoundingPrinciples}
+				/>
+				<Stack.Screen name="WebView" component={WebViewScreen} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
